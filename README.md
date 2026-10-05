@@ -26,7 +26,12 @@ def main():
 
         if opcao == '1':
             nome = input("Nome: ")
-            idade = int(input("Idade: "))
+            while True:
+                try:
+                    idade = int(input("Idade: "))
+                    break
+                except ValueError:
+                    print("Idade inválida. Tente novamente.")
             curso = input("Curso: ")
             numero_matricula = input("Número de Matrícula: ")
             aluno = Aluno(nome, idade, curso, numero_matricula)
